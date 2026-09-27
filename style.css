@@ -1,0 +1,252 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a5acd, #836fff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+}
+.app {
+  background: #fdfcf9;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  header h1 {
+    color: #4b3f72;
+    font-size: 1.8rem;
+}
+
+header p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+ #taskForm {
+   display: flex;
+   gap: 8px;
+   margin-bottom: 16px;  
+ }
+
+ #taskInput {
+    flex: 1;
+    padding: 12px 14px;
+    border:2px solid #e0dcf5;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+ }
+
+ #taskInput:focus {
+  border-color: #6a5acd;
+ }
+
+ #taskForm button {
+    background: #6a5acd;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+ }
+ #taskForm button:active {
+    transform: scale(0.96);
+ }
+
+ .filters {display: flex;
+    display:flex;
+    gap: 8px;
+    margin-bottom: 16px;
+ }
+
+ .filter-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: #f0eefc;
+    color: #6a5acd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+ }
+
+ .filter-btn:hover {
+    background: #e0dcf5;
+ }
+
+ .filter-btn.active {
+    background: #6a5acd;
+    color: white;
+ }
+
+ #taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ }
+
+ .task-item {
+    display: flex;
+    align-items: center;
+    background: 12px 14px;
+    border-radius: 10px;
+    animation: fadeIn 0.25s ease;
+ }
+
+ .task-item .task-text {
+    flex: 1;
+    margin: 0 12px;
+    word-break: brak-word;
+    transition: color 0.2s ease;
+ }
+
+ .task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #a0a0a0;
+ }
+
+ .task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #4caf7d;
+    cursor: pointer;
+ }
+
+ .delete-btn {
+    background: #ff6f6f;
+    color: white;
+   border-radius: 6px;
+   padding: 6px 10px;
+   cursor: pointer;
+   font-size: 0.85rem;
+   transition: background 0.2s ease, transform 0.1s ease;
+ }
+
+ .delete-btn:hover {
+    background: #e85a5a;
+ }
+
+ .delete-btn:active {
+    transform: scale(0.92);
+}
+
+.empty-msg {
+    text-align: center;
+    color: #aaa;
+    padding: 20px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+/* Theme toggle button */
+#themeToggle {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   background: none;
+   border: none;
+   font-size: 1.4rem;
+   cursor: pointer;
+}
+
+header {
+   position: relative; 
+}
+
+/* Dark mode */
+body.dark {
+   background: linear-gradient(135deg, #1e1b3a, #2d2a5c);
+}
+
+body.dark .app {
+   background: #1f1d2b;
+   color: #e0e0e0;
+}
+
+body.dark header h1,
+body.dark #taskCount {
+   color: #d0c9f5;
+}
+
+body.dark .task-item {
+   background: #2a2840;
+}
+
+body.dark #taskInput,
+body.dark #taskDate {
+   background: #2a2840;
+   color: #cfc9f0;
+}
+
+/* Due date input */
+#taskDate {
+   padding: 10px;
+   border: 2px solid #e0dcf5;
+   border-radius: 10px;
+   font-size: 0.9rem;
+}
+
+.task-due {
+    font-size: 0.75rem;
+    color: #888;
+    margin-left: 8px;
+}
+
+.task-time {
+  font-size: 0.7rem;
+  color: #aaa;
+  display: block;
+}
+
+/* Contact footer */
+.contact {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #eee
+}
+
+.contact {
+  text-align: center;
+  margin-top: 20px;
+  padding: 16px;
+  background: #f0eefc;
+  border-radius: 10px;
+}
+
+.contact a {
+  color: #6a5acd;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+body.dark .contact {
+   background: #2a2840;
+}
+
+body.dark .contact a {
+   color: #b8aef7;
+}
